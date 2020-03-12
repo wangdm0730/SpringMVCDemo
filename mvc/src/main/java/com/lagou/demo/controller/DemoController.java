@@ -40,7 +40,7 @@ public class DemoController {
      * @param username
      * @return
      */
-//    @MySecurity({"xiaobai","xiaobaitu"})
+    @MySecurity({"xiaobai","xiaobaitu"})
     @LagouRequestMapping("/queryByAuthorityDemo1")
     public String queryByAuthorityDemo1(HttpServletRequest request, HttpServletResponse response,String username) {
         return demoService.get(username);
@@ -54,7 +54,7 @@ public class DemoController {
      * @param username
      * @return
      */
-//    @MySecurity({"zhangsan","lisi"})
+    @MySecurity({"zhangsan","lisi"})
     @LagouRequestMapping("/queryByAuthorityDemo2")
     public String queryByAuthorityDemo2(HttpServletRequest request, HttpServletResponse response,String username) {
         return demoService.get(username);
