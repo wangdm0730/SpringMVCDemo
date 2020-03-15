@@ -1,0 +1,23 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lagou.edu.mapper.ResumeMapper">
+
+    <select id="queryResumeList" resultType="com.lagou.edu.pojo.Resume">
+        select * from tb_resume
+    </select>
+    <select id="findOne" resultType="com.lagou.edu.pojo.Resume" parameterType="long">
+        select * from tb_resume where id = #{id}
+    </select>
+
+    <insert id="saveOne" parameterType="com.lagou.edu.pojo.Resume">
+        insert into tb_resume values(#{id},#{address},#{name},#{phone})
+    </insert>
+
+    <delete id="deleteById" parameterType="long">
+        delete from tb_resume where id = #{id}
+    </delete>
+
+    <update id="updateOne" parameterType="com.lagou.edu.pojo.Resume">
+        update tb_resume set address = #{address},name = #{name},phone = #{phone} where id = #{id}
+    </update>
+
+</mapper>
